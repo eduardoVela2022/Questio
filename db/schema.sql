@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS questio_db;
+CREATE DATABASE questio_db;
