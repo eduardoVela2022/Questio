@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Quiz, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/quiz/:id', async (req, res) => {
+router.get('/quiz/:id', withAuth, async (req, res) => {
   try {
     const quizData = await Quiz.findByPk(req.params.id, {
       include: [
