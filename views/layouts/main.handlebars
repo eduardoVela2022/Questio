@@ -35,17 +35,20 @@
       <!-- Navigation Bar -->
       <nav class="row navigation-bar-buttons">
         {{#if logged_in}}
+          {{! Navigation bar buttons for when the user is logged in }}
           <!-- View Account Button -->
-          <button>Account</button>
+          <button id="navbar-account-btn">Account</button>
           <!-- Quizzes Button -->
-          <button>Quizzes</button>
+          <button id="navbar-quizzes-btn">Quizzes</button>
           <!-- Log Out Button -->
-          <button>Log out</button>
+          <button id="navbar-logout-btn">Log out</button>
+
         {{else}}
+          {{! Navigation bar buttons for when the user is logged out }}
           <!-- Log In Button -->
-          <button>Log In</button>
+          <button id="navbar-login-btn">Log In</button>
           <!-- Sign Up Button -->
-          <button>Sign Up</button>
+          <button id="navbar-signup-btn">Sign Up</button>
         {{/if}}
       </nav>
     </header>
@@ -58,5 +61,14 @@
       <!-- Credits -->
       <h6>Created with ❤️ by Epik High Games.</h6>
     </footer>
+
+    {{#if logged_in}}
+      {{! Script for the buttons of the navbar for when the user is logged in }}
+      <script src="/public/js/navbarLoggedIn.js"></script>
+    {{else}}
+      {{! Script for the buttons of the navbar for when the user is logged out }}
+      <script src="/public/js/navbarLoggedOut.js"></script>
+    {{/if}}
+
   </body>
 </html>
