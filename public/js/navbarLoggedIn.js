@@ -3,7 +3,6 @@ const navbarAccountBtn = document.querySelector("#navbar-account-btn");
 const navbarQuizzesBtn = document.querySelector("#navbar-quizzes-btn");
 const navbarLogoutBtn = document.querySelector("#navbar-logout-btn");
 
-// Navbar button functions
 // Redirects the user to the account view
 function goToAccountView() {
   document.location.replace("/account");
@@ -14,7 +13,7 @@ function goToQuizzesView() {
   document.location.replace("/quizzes");
 }
 
-// Logs out the user and redirects him or her to the homepage
+// Logs out the user and redirects him or her to the homepage view
 async function logoutUser() {
   // Tells the server to log out the user
   const res = await fetch("/api/users/logout", {
@@ -22,7 +21,7 @@ async function logoutUser() {
     headers: { "Content-Type": "application/json" },
   });
 
-  // If the server logs out the user successfully, redirect him or her to the homepage
+  // If the server logs out the user successfully, redirect him or her to the homepage view
   if (res.ok) {
     document.location.replace("/");
   } else {
