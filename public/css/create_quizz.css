@@ -1,9 +1,0 @@
-#create-quiz-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-button[type="button"] {
-    margin-top: 20px;
-    display: block;
-}

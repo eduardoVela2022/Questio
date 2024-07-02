@@ -1,0 +1,29 @@
+/* Create Quiz Button Row Class*/
+.create-quiz-button-row {
+  justify-content: end;
+}
+
+/* Quiz List Class */
+.quiz-list {
+  height: 70dvh;
+  overflow: auto;
+  gap: 4rem;
+}
+
+/* Quiz List Item Class */
+.quiz-list-item {
+  gap: 3rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: var(--violet-300);
+}
+
+.quiz-list-item h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+/* Quiz List Item Buttons Class */
+.quiz-list-item-buttons {
+  justify-content: space-between;
+}
