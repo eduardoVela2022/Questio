@@ -1,0 +1,14 @@
+/* Homepage H2 Class */
+.homepage-h2 {
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+/* Homepage H4 Class */
+.homepage-h4 {
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+}

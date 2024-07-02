@@ -1,0 +1,78 @@
+/* Adding the website's colors to the root element so they can be used in any CSS file */
+:root {
+  --website-background-color: #fafafa;
+  --website-text-color: #0a0a0a;
+  --button-text-color: white;
+  --slate-100: #f1f5f9;
+  --slate-200: #e5e7eb;
+  --violet-100: #ede9fe;
+  --violet-300: #c4b5fd;
+  --violet-500: #8b5cf6;
+  --violet-700: #6d28d9;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+}
+
+/* Margin and padding is removed for all elements, and border box dox sizing is applied to them */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The html element is given all the height that is available in the user’s screen */
+html {
+  height: 100%;
+}
+
+/* The body element is given a minimum height of 100% and a line height of 1
+    The website’s font families are also assigned here */
+body {
+  min-height: 100%;
+  line-height: 1;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background-color: var(--website-background-color);
+  color: var(--website-text-color);
+}
+
+/* All header elements start with the default font size */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+/* All this elements start with the default font size and font family */
+input,
+select,
+option,
+optgroup,
+textarea,
+button,
+pre,
+code {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+/* Removes the bullet points of the ordered and unordered list elements */
+ol,
+ul {
+  list-style: none;
+}
+
+/* The anchor elements will not be underlined, and their color will be the website's text color */
+a {
+  text-decoration: none;
+  color: var(--website-text-color);
+}
+
+/* Removes the default border and background color of the button */
+button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}

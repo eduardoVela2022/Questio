@@ -1,0 +1,148 @@
+/* Column Class */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Row Class */
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Primary Button Class */
+.btn-primary {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: var(--violet-700);
+  color: var(--button-text-color);
+  transition: background-color 0.5s ease;
+  outline-offset: 3px;
+  outline-color: var(--violet-700);
+}
+
+.btn-primary:hover {
+  background-color: var(--violet-500);
+}
+
+/* Secondary Button Class */
+.btn-secondary {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: var(--orange-600);
+  color: var(--button-text-color);
+  transition: background-color 0.5s ease;
+  outline-offset: 3px;
+  outline-color: var(--orange-600);
+}
+
+.btn-secondary:hover {
+  background-color: var(--orange-500);
+}
+
+/* Website Header Class */
+.website-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  border-bottom: 2px var(--website-text-color) solid;
+  background-color: var(--violet-100);
+}
+
+.website-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.website-header button {
+  font-weight: 500;
+  outline-offset: 3px;
+  outline-color: var(--violet-700);
+}
+
+.website-header button:hover {
+  text-decoration: underline;
+}
+
+/* Navigation Bar Buttons Class */
+.navigation-bar-buttons {
+  gap: 2rem;
+}
+
+/* Website Main Content Class */
+.website-main-content {
+  align-items: center;
+  padding: 2rem 3rem;
+  height: 100dvh;
+}
+
+/* Website Main Content Container */
+.website-main-content-container {
+  width: 60dvw;
+}
+
+/* Main Content Title Class */
+.main-content-title {
+  justify-content: center;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Website Footer Class */
+.website-footer {
+  padding: 2rem 3rem;
+  border-top: 2px var(--website-text-color) solid;
+  text-align: center;
+  background-color: var(--violet-100);
+}
+
+.website-footer h6 {
+  font-weight: 400;
+}
+
+/* Form Label Class */
+.form-label {
+  width: 14dvw;
+}
+
+/* Form Input Class */
+.form-input {
+  width: 46dvw;
+  padding: 5px 10px;
+  border: 3px var(--violet-700) solid;
+  outline: none;
+  transition: border-color 0.5s ease;
+}
+
+.form-input:disabled {
+  background-color: white;
+}
+
+.form-input:focus {
+  border-color: var(--violet-500);
+}
+
+/* Form Container Class */
+.form-container {
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  background-color: var(--violet-300);
+}
+
+/* Form Field Row Class */
+.form-field-row {
+  align-items: center;
+}
+
+/* Form Submit Button Row Class */
+.form-submit-button-row {
+  justify-content: center;
+  margin-top: 1rem;
+}
