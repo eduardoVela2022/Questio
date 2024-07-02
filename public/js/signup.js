@@ -20,7 +20,7 @@ async function createNewAccount(event) {
   // If all the values are not empty, create the new account
   if (username && email && password) {
     // Tells the server to create a new user
-    const res = await fetch("/api/users/signup", {
+    const res = await fetch("/api/users/", {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
       headers: { "Content-Type": "application/json" },
