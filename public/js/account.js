@@ -49,31 +49,19 @@ async function deleteUser(event) {
     return;
   }
 
-  // Form values
-  const username = accountUsernameInput.value.trim();
-  const email = accountEmailInput.value.trim();
+  // Tells the server to delete the user's account
+  const res = await fetch(`/api/users/${accountDeleteBtn.dataset.userId}`, {
+    method: "DELETE",
+    body: JSON.stringify({ username, email }),
+    headers: { "Content-Type": "application/json" },
+  });
 
-  // If all the values are not empty, delete the user's account
-  if (username && email) {
-    // Tells the server to delete the user's account
-    const res = await fetch("/api/users/", {
-      method: "DELETE",
-      body: JSON.stringify({ username, email }),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    // If the server deleted the user's account successfully, log out the user and redirect him or her to the homepage
-    if (res.ok) {
-      logoutUser();
-    } else {
-      // Else send an alert with the status text of the response
-      alert(res.statusText);
-    }
+  // If the server deleted the user's account successfully, log out the user and redirect him or her to the homepage
+  if (res.ok) {
+    await logoutUser();
   } else {
-    // Else send an alert telling the user to fill out the form
-    alert(
-      "Some of the fields of the form are missing. Please fill out all the fields of the form."
-    );
+    // Else send an alert with the status text of the response
+    alert(res.statusText);
   }
 }
 

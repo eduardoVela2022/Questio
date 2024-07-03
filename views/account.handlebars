@@ -52,8 +52,15 @@
         <button id="account-modify-btn" class="btn-primary">Modify Account</button>
 
         <!-- Delete Account Button -->
-        <button id="account-delete-btn" class="btn-secondary">Delete Account</button>
+        <button
+          id="account-delete-btn"
+          data-user-id="{{user.id}}"
+          class="btn-secondary"
+        >Delete Account</button>
       </div>
     </form>
   </div>
 </main>
+
+{{! Account Script }}
+<script src="/public/js/account.js"></script>
