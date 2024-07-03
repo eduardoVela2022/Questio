@@ -2,7 +2,6 @@
 const navbarLoginBtn = document.querySelector("#navbar-login-btn");
 const navbarSignupBtn = document.querySelector("#navbar-signup-btn");
 
-// Navbar button functions
 // Redirects the user to the log in view
 function goToLoginView() {
   document.location.replace("/login");

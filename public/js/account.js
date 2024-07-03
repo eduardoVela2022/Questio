@@ -5,6 +5,7 @@ const accountPasswordInput = document.querySelector("#account-password-input");
 const accountModifyBtn = document.querySelector("#account-modify-btn");
 const accountDeleteBtn = document.querySelector("#account-delete-btn");
 
+// Modifies the user with the information of the form
 async function modifyUser(event) {
   // Prevents browser from reloading
   event.preventDefault();
@@ -38,6 +39,7 @@ async function modifyUser(event) {
   }
 }
 
+// Deletes the user with the information of the form
 async function deleteUser(event) {
   // Prevents browser from reloading
   event.preventDefault();

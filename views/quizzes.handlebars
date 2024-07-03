@@ -14,115 +14,42 @@
 
     <!-- Quiz List -->
     <ul class="column quiz-list">
-      <!-- Quiz List Item -->
-      <li class="column quiz-list-item">
-        <!-- Title -->
-        <h2>A quiz about the capitals of South American countries</h2>
+      {{#each quizzes as |quiz|}}
+        <!-- Quiz List Item -->
+        <li class="column quiz-list-item">
+          <!-- Title -->
+          <h2>{{quiz.name}}</h2>
 
-        <!-- Quiz Buttons -->
-        <div class="row quiz-list-item-buttons">
-          <div>
-            <!-- Play Quiz Button -->
-            <button class="btn-primary">Play</button>
+          <!-- Quiz Buttons -->
+          <div class="row quiz-list-item-buttons">
+            <div>
+              <!-- Play Quiz Button -->
+              <button
+                data-quiz-id="{{quiz.id}}"
+                class="btn-primary play-btn"
+              >Play</button>
+            </div>
+
+            <div class="row">
+              <!-- Modify Quiz Button -->
+              <button
+                data-quiz-id="{{quiz.id}}"
+                class="btn-secondary modify-btn"
+              >Modify</button>
+
+              <!-- Delete Quiz Button -->
+              <button
+                data-quiz-id="{{quiz.id}}"
+                data-quiz-name="{{quiz.name}}"
+                class="btn-secondary delete-btn"
+              >Delete</button>
+            </div>
           </div>
-
-          <div class="row">
-            <!-- Modify Quiz Button -->
-            <button class="btn-secondary">Modify</button>
-
-            <!-- Delete Quiz Button -->
-            <button class="btn-secondary">Delete</button>
-          </div>
-        </div>
-      </li>
-
-      <!-- Quiz List Item -->
-      <li class="column quiz-list-item">
-        <!-- Title -->
-        <h2>A quiz about the capitals of South American countries</h2>
-
-        <!-- Quiz Buttons -->
-        <div class="row quiz-list-item-buttons">
-          <div>
-            <!-- Play Quiz Button -->
-            <button class="btn-primary">Play</button>
-          </div>
-
-          <div class="row">
-            <!-- Modify Quiz Button -->
-            <button class="btn-secondary">Modify</button>
-
-            <!-- Delete Quiz Button -->
-            <button class="btn-secondary">Delete</button>
-          </div>
-        </div>
-      </li>
-
-      <!-- Quiz List Item -->
-      <li class="column quiz-list-item">
-        <!-- Title -->
-        <h2>A quiz about the capitals of South American countries</h2>
-
-        <!-- Quiz Buttons -->
-        <div class="row quiz-list-item-buttons">
-          <div>
-            <!-- Play Quiz Button -->
-            <button class="btn-primary">Play</button>
-          </div>
-
-          <div class="row">
-            <!-- Modify Quiz Button -->
-            <button class="btn-secondary">Modify</button>
-
-            <!-- Delete Quiz Button -->
-            <button class="btn-secondary">Delete</button>
-          </div>
-        </div>
-      </li>
-
-      <!-- Quiz List Item -->
-      <li class="column quiz-list-item">
-        <!-- Title -->
-        <h2>A quiz about the capitals of South American countries</h2>
-
-        <!-- Quiz Buttons -->
-        <div class="row quiz-list-item-buttons">
-          <div>
-            <!-- Play Quiz Button -->
-            <button class="btn-primary">Play</button>
-          </div>
-
-          <div class="row">
-            <!-- Modify Quiz Button -->
-            <button class="btn-secondary">Modify</button>
-
-            <!-- Delete Quiz Button -->
-            <button class="btn-secondary">Delete</button>
-          </div>
-        </div>
-      </li>
-
-      <!-- Quiz List Item -->
-      <li class="column quiz-list-item">
-        <!-- Title -->
-        <h2>A quiz about the capitals of South American countries</h2>
-
-        <!-- Quiz Buttons -->
-        <div class="row quiz-list-item-buttons">
-          <div>
-            <!-- Play Quiz Button -->
-            <button class="btn-primary">Play</button>
-          </div>
-
-          <div class="row">
-            <!-- Modify Quiz Button -->
-            <button class="btn-secondary">Modify</button>
-
-            <!-- Delete Quiz Button -->
-            <button class="btn-secondary">Delete</button>
-          </div>
-        </div>
-      </li>
+        </li>
+      {{/each}}
     </ul>
   </div>
 </main>
+
+{{! Quizzes Script }}
+<script src="/public/js/quizzes.js"></script>

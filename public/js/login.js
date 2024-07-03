@@ -4,6 +4,7 @@ const loginPasswordInput = document.querySelector("#login-password-input");
 const loginLoginBtn = document.querySelector("#login-login-btn");
 const loginCancelBtn = document.querySelector("#login-cancel-btn");
 
+// Logs in a user with the information of the form
 async function loginUser(event) {
   // Prevents browser from reloading
   event.preventDefault();
