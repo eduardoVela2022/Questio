@@ -7,7 +7,7 @@
 
     <div class="row create-quiz-button-row">
       <!-- Create A Quiz Button -->
-      <button id="create-quiz-button" class="btn-primary">
+      <button id="quizzes-create-quiz-button" class="btn-primary">
         Create a quiz
       </button>
     </div>
@@ -31,12 +31,6 @@
             </div>
 
             <div class="row">
-              <!-- Modify Quiz Button -->
-              <button
-                data-quiz-id="{{quiz.id}}"
-                class="btn-secondary modify-btn"
-              >Modify</button>
-
               <!-- Delete Quiz Button -->
               <button
                 data-quiz-id="{{quiz.id}}"
@@ -46,6 +40,8 @@
             </div>
           </div>
         </li>
+      {{else}}
+        <p>Your quiz list is currently empty.</p>
       {{/each}}
     </ul>
   </div>

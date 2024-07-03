@@ -1,16 +1,18 @@
 // View items
+const quizzesCreateQuizBtn = document.querySelector(
+  "#quizzes-create-quiz-button"
+);
 const playButtons = document.querySelectorAll(".play-btn");
-const modifyButtons = document.querySelectorAll(".modify-btn");
 const deleteButtons = document.querySelectorAll(".delete-btn");
+
+// Redirects the user to the quiz form view
+function goToQuizFormView() {
+  document.location.replace("/quiz-form");
+}
 
 // Redirects the user to the quiz view of the chosen quiz
 function playQuiz(quizId) {
   document.location.replace(`/quiz/${quizId}`);
-}
-
-// Redirects the user to the modify quiz view of the chosen quiz
-function modifyQuiz(quizId) {
-  // TODO: Update Logic
 }
 
 // Deletes the chosen quiz
@@ -35,20 +37,18 @@ async function deleteQuiz(quizId, quizName) {
   }
 }
 
+// Quizzes event listeners
+quizzesCreateQuizBtn.addEventListener("click", goToQuizFormView);
+
 // All play buttons get added their event listener
 playButtons.forEach((button) => {
-  button.addEventListener("click", playQuiz(button.dataset.quizId));
-});
-
-// All modify buttons get added their event listener
-modifyButtons.forEach((button) => {
-  button.addEventListener("click", modifyQuiz(button.dataset.quizId));
+  button.addEventListener("click", () => playQuiz(button.dataset.quizId));
 });
 
 // All delete buttons get added their event listener
-deleteButtons.forEach(async (button) => {
+deleteButtons.forEach((button) => {
   button.addEventListener(
     "click",
-    await deleteQuiz(button.dataset.quizId, button.dataset.quizName)
+    async () => await deleteQuiz(button.dataset.quizId, button.dataset.quizName)
   );
 });
