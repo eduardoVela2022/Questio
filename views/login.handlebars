@@ -5,26 +5,31 @@
     <!-- Main Title -->
     <h1 class="row main-content-title">Log In</h1>
 
-    <div class="column form-container">
-      <!-- Email -->
-      <div class="row form-field-row">
-        <label class="form-label">Email:</label>
-        <input type="text" class="form-input" />
+    <form>
+      <div class="column form-container">
+        <!-- Email -->
+        <div class="row form-field-row">
+          <label for="login-email-input" class="form-label">Email:</label>
+          <input id="login-email-input" type="text" class="form-input" />
+        </div>
+
+        <!-- Password -->
+        <div class="row form-field-row">
+          <label for="login-password-input" class="form-label">Password:</label>
+          <input id="login-password-input" type="password" class="form-input" />
+        </div>
       </div>
 
-      <!-- Password -->
-      <div class="row form-field-row">
-        <label class="form-label">Password:</label>
-        <input type="password" class="form-input" />
+      <div class="row form-submit-button-row">
+        <!-- Log In Button -->
+        <button id="login-login-btn" class="btn-primary" type="submit">Log In</button>
+
+        <!-- Cancel Button -->
+        <button id="login-cancel-btn" class="btn-secondary">Cancel</button>
       </div>
-    </div>
-
-    <div class="row form-submit-button-row">
-      <!-- Log In Button -->
-      <button class="btn-primary">Log In</button>
-
-      <!-- Cancel Button -->
-      <button class="btn-secondary">Cancel</button>
-    </div>
+    </form>
   </div>
 </main>
+
+{{! Log In Script }}
+<script src="/public/js/login.js"></script>

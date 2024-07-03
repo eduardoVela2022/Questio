@@ -5,32 +5,62 @@
     <!-- Main Title -->
     <h1 class="row main-content-title">Your Account</h1>
 
-    <div class="column form-container">
-      <!-- Username -->
-      <div class="row form-field-row">
-        <label class="form-label">Username:</label>
-        <input type="text" class="form-input" disabled />
+    <form>
+      <div class="column form-container">
+        <!-- Username -->
+        <div class="row form-field-row">
+          <label
+            for="account-username-input"
+            class="form-label"
+          >Username:</label>
+          <input
+            id="account-username-input"
+            type="text"
+            class="form-input"
+            value="{{user.username}}"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="row form-field-row">
+          <label for="account-email-input" class="form-label">Email:</label>
+          <input
+            id="account-email-input"
+            type="text"
+            class="form-input"
+            value="{{user.email}}"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="row form-field-row">
+          <label
+            for="account-password-input"
+            class="form-label"
+          >Password:</label>
+          <input
+            id="account-password-input"
+            type="password"
+            class="form-input"
+            value="{{user.password}}"
+          />
+        </div>
       </div>
 
-      <!-- Email -->
-      <div class="row form-field-row">
-        <label class="form-label">Email:</label>
-        <input type="text" class="form-input" disabled />
+      <div class="row form-submit-button-row">
+        <!-- Modify Account Button -->
+        <button id="account-modify-btn" class="btn-primary">Modify Account</button>
+
+        <!-- Delete Account Button -->
+        <button
+          id="account-delete-btn"
+          data-user-id="{{user.id}}"
+          class="btn-secondary"
+        >Delete Account</button>
       </div>
-
-      <!-- Password -->
-      <div class="row form-field-row">
-        <label class="form-label">Password:</label>
-        <input type="text" class="form-input" disabled />
-      </div>
-    </div>
-
-    <div class="row form-submit-button-row">
-      <!-- Modify Account Button -->
-      <button class="btn-primary">Modify Account</button>
-
-      <!-- Delete Account Button -->
-      <button class="btn-secondary">Delete Account</button>
-    </div>
+    </form>
   </div>
 </main>
+
+{{! Account Script }}
+<script src="/public/js/account.js"></script>

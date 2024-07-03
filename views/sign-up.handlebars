@@ -5,32 +5,47 @@
     <!-- Main Title -->
     <h1 class="row main-content-title">Sign Up</h1>
 
-    <div class="column form-container">
-      <!-- Username -->
-      <div class="row form-field-row">
-        <label class="form-label">Username:</label>
-        <input type="text" class="form-input" />
+    <form>
+      <div class="column form-container">
+        <!-- Username -->
+        <div class="row form-field-row">
+          <label
+            for="signup-username-input"
+            class="form-label"
+          >Username:</label>
+          <input id="signup-username-input" type="text" class="form-input" />
+        </div>
+
+        <!-- Email -->
+        <div class="row form-field-row">
+          <label for="signup-email-input" class="form-label">Email:</label>
+          <input id="signup-email-input" type="text" class="form-input" />
+        </div>
+
+        <!-- Password -->
+        <div class="row form-field-row">
+          <label
+            for="signup-password-input"
+            class="form-label"
+          >Password:</label>
+          <input id="signup-password-input" type="text" class="form-input" />
+        </div>
       </div>
 
-      <!-- Email -->
-      <div class="row form-field-row">
-        <label class="form-label">Email:</label>
-        <input type="text" class="form-input" />
+      <div class="row form-submit-button-row">
+        <!-- Create Account Button -->
+        <button
+          id="signup-create-account-btn"
+          class="btn-primary"
+          type="submit"
+        >Create Account</button>
+
+        <!-- Cancel Button -->
+        <button id="signup-cancel-btn" class="btn-secondary">Cancel</button>
       </div>
-
-      <!-- Password -->
-      <div class="row form-field-row">
-        <label class="form-label">Password:</label>
-        <input type="text" class="form-input" />
-      </div>
-    </div>
-
-    <div class="row form-submit-button-row">
-      <!-- Create Account Button -->
-      <button class="btn-primary">Create Account</button>
-
-      <!-- Cancel Button -->
-      <button class="btn-secondary">Cancel</button>
-    </div>
+    </form>
   </div>
 </main>
+
+{{! Sign Up script }}
+<script src="/public/js/signup.js"></script>
