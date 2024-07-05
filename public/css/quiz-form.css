@@ -1,0 +1,14 @@
+/* Quiz Form Content Class */
+.quiz-form-content {
+  height: 260rem;
+}
+
+/* Quiz Form Name Class */
+.quiz-form-name {
+  align-items: center;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 1.75rem;
+  font-weight: 400;
+  background-color: var(--violet-300);
+}

@@ -1,0 +1,32 @@
+<!-- Main -->
+<main class="column website-main-content quiz-content">
+  <!-- Main Column -->
+  <div class="column website-main-content-container">
+    <!-- Main Title -->
+    <h1 class="row main-content-title">
+      A quiz about the capitals of South American countries
+    </h1>
+
+    <!-- Form -->
+    <form class="column">
+      {{#each questions as |question|}}
+        <div class="column form-container">
+          <div class="row form-field-row">
+            <!-- Question -->
+            <p>{{question.question}}</p>
+          </div>
+
+          <!-- Answers -->
+          {{#each question.answers as |answer|}}
+            <button class="btn-answer">{{answer.answer}}</button>
+          {{/each}}
+        </div>
+      {{/each}}
+
+      <div class="row form-submit-button-row">
+        <!-- Submit Quiz Button -->
+        <button class="btn-primary">Submit Quiz</button>
+      </div>
+    </form>
+  </div>
+</main>
