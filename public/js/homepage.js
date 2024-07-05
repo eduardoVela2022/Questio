@@ -4,9 +4,9 @@ const homepageCreateAnAccountBtn = document.querySelector(
 );
 
 // Redirects the user to the log in view
-function goToLoginView() {
-  document.location.replace("/login");
+function goToSignUpView() {
+  document.location.replace("/signup");
 }
 
 // Homepage event listeners
-homepageCreateAnAccountBtn.addEventListener("click", goToLoginView);
+homepageCreateAnAccountBtn.addEventListener("click", goToSignUpView);

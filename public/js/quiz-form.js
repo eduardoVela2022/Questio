@@ -11,6 +11,7 @@ async function createNewQuiz(event) {
   // Prevents browser from reloading
   event.preventDefault();
 
+  console.log(questionInputFields)
   // Form values
   const quizName = quizNameInputField.value.trim();
   const questions = questionInputFields.map((inputField) =>

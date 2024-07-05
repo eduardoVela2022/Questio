@@ -55,6 +55,10 @@ router.get("/quizzes", withAuth, async (req, res) => {
   }
 });
 
+router.get("/account", (req, res) => {
+  res.render("account");
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -64,6 +68,15 @@ router.get("/login", (req, res) => {
 
   // Render login handlebar
   res.render("login");
+});
+
+router.get("/quiz-form", (req, res) => {
+  res.render("quiz-form");
+});
+
+router.get("/signup", (req, res) => {
+  // Render login handlebar
+  res.render("sign-up");
 });
 
 module.exports = router;
