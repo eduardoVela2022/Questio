@@ -48,15 +48,15 @@ router.get("/quizzes", withAuth, async (req, res) => {
     // Render quizzes handlebar
     res.render("quizzes", {
       ...user,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/account", (req, res) => {
-  res.render("account");
+router.get("/account", withAuth, (req, res) => {
+  res.render("account", { logged_in: req.session.logged_in });
 });
 
 router.get("/login", (req, res) => {
@@ -70,8 +70,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/quiz-form", (req, res) => {
-  res.render("quiz-form");
+router.get("/quiz-form", withAuth, (req, res) => {
+  res.render("quiz-form", { logged_in: req.session.logged_in });
 });
 
 router.get("/signup", (req, res) => {

@@ -1,6 +1,6 @@
 /* Quiz Form Content Class */
 .quiz-form-content {
-  height: 260rem;
+  height: 340rem;
 }
 
 /* Quiz Form Name Class */
@@ -11,4 +11,8 @@
   font-size: 1.75rem;
   font-weight: 400;
   background-color: var(--violet-300);
+}
+
+.quiz-form-correct-answer-button-row button {
+  width: 15dvw;
 }

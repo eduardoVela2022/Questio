@@ -6,20 +6,35 @@ const formQuizCreateQuizBtn = document.querySelector(
   "#form-quiz-create-quiz-btn"
 );
 
+// const questionObject = {
+//   question: "",
+//   answers: [
+//     {
+//       answer: "",
+//       isCorrect: false,
+//     },
+//   ],
+// };
+
 // Creates a new quiz with the information of the form
 async function createNewQuiz(event) {
   // Prevents browser from reloading
   event.preventDefault();
 
-  console.log(questionInputFields)
+  // Transforming Node Lists into Arrays.
+  const questionInputArray = Array.from(questionInputFields);
+  const answerInputArray = Array.from(answerInputFields);
+
   // Form values
   const quizName = quizNameInputField.value.trim();
-  const questions = questionInputFields.map((inputField) =>
+  const questions = questionInputArray.map((inputField) =>
     inputField.value.trim()
   );
-  const answers = answerInputFields.map((inputField) =>
-    inputField.value.trim()
-  );
+  const answers = answerInputArray.map((inputField) => inputField.value.trim());
+
+  console.log(quizName);
+  console.log(questions);
+  console.log(answers);
 
   // If all the values are not empty, create the new quiz
   if (quizName && !questions.includes("") && !answers.includes("")) {
