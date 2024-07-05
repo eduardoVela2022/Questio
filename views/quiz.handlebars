@@ -4,7 +4,7 @@
   <div class="column website-main-content-container">
     <!-- Main Title -->
     <h1 class="row main-content-title">
-      A quiz about the capitals of South American countries
+      {{quiz.name}}
     </h1>
 
     <!-- Form -->
@@ -18,14 +18,18 @@
 
           <!-- Answers -->
           {{#each question.answers as |answer|}}
-            <button class="btn-answer">{{answer.answer}}</button>
+            <button
+              data-question-id="{{answer.questionId}}"
+              data-answer-id="{{answer.id}}"
+              class="btn-answer question-answer-btn"
+            >{{answer.answer}}</button>
           {{/each}}
         </div>
       {{/each}}
 
       <div class="row form-submit-button-row">
         <!-- Submit Quiz Button -->
-        <button class="btn-primary">Submit Quiz</button>
+        <button id="quiz-submit-btn" class="btn-primary">Submit Quiz</button>
       </div>
     </form>
   </div>
