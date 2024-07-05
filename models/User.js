@@ -4,7 +4,11 @@ const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
 // User class inherits attributes and methods from the Model class
-class User extends Model {}
+class User extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // User model
 User.init(

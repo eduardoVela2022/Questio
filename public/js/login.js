@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/quizzes');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
@@ -29,6 +29,7 @@ const loginFormHandler = async (event) => {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
+    console.log("user created")
     if (name && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -37,9 +38,10 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/quizzes');
+        document.location.replace('/profile');
       } else {
-        alert(response.statusText);
+        console.log(err)
+        alert(err);
       }
     }
   };
