@@ -38,8 +38,10 @@ async function loginUser(event) {
 }
 
 // Redirects the user to the homepage view
-function goToHomepageView() {
-  document.location.replace("/");
+function goToHomepageView(event) {
+  // Prevents browser from reloading
+  event.preventDefault();
+  document.location.assign("/");
 }
 
 // Log in event listeners

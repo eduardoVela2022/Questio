@@ -5,12 +5,12 @@ const navbarLogoutBtn = document.querySelector("#navbar-logout-btn");
 
 // Redirects the user to the account view
 function goToAccountView() {
-  document.location.replace("/account");
+  document.location.assign("/account");
 }
 
 // Redirects the user to the quizzes view
 function goToQuizzesView() {
-  document.location.replace("/quizzes");
+  document.location.assign("/quizzes");
 }
 
 // Logs out the user and redirects him or her to the homepage view
@@ -23,7 +23,7 @@ async function logoutUser() {
 
   // If the server logs out the user successfully, redirect him or her to the homepage view
   if (res.ok) {
-    document.location.replace("/");
+    document.location.assign("/");
   } else {
     // Else send an alert with the status text of the response
     alert(res.statusText);
