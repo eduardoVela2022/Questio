@@ -2,6 +2,9 @@
 const quizNameInputField = document.querySelector(".quiz-name-input-field");
 const questionInputFields = document.querySelectorAll(".question-input-field");
 const answerInputFields = document.querySelectorAll(".answer-input-field");
+const correctAnswerButtons = document.querySelectorAll(
+  ".correct-answer-button"
+);
 const formQuizCreateQuizBtn = document.querySelector(
   "#form-quiz-create-quiz-btn"
 );
@@ -60,5 +63,36 @@ async function createNewQuiz(event) {
   }
 }
 
+// Handles the event of a correct answer button
+function handleCorrectAnswerClick(event) {
+  // Prevents browser from reloading
+  event.preventDefault();
+
+  // If the targeted button is already primary, return
+  if (event.target.classList.contains("btn-primary")) {
+    return;
+  }
+
+  // Changes the previous primary button's style to gray
+  for (const button of correctAnswerButtons) {
+    // If the button has the same question number as the targeted button
+    // And it has the primary button class
+    if (
+      button.dataset.questionNumber === event.target.dataset.questionNumber &&
+      button.classList.contains("btn-primary")
+    ) {
+      button.classList.remove("btn-primary");
+      button.classList.add("btn-gray");
+    }
+  }
+
+  // Changes the targeted button's style to primary
+  event.target.classList.add("btn-primary");
+  event.target.classList.remove("btn-gray");
+}
+
 // Quiz form event listeners
 formQuizCreateQuizBtn.addEventListener("click", createNewQuiz);
+correctAnswerButtons.forEach((button) =>
+  button.addEventListener("click", handleCorrectAnswerClick)
+);

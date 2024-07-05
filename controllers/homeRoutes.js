@@ -70,7 +70,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/quiz-form", withAuth, (req, res) => {
+router.get("/quiz-form", (req, res) => {
   res.render("quiz-form", { logged_in: req.session.logged_in });
 });
 
