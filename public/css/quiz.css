@@ -2,18 +2,3 @@
 .quiz-content {
   height: 240rem;
 }
-
-/* Answer Button Class */
-.btn-answer {
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  font-weight: 700;
-  background-color: var(--slate-200);
-  transition: background-color 0.5s ease;
-  outline-offset: 3px;
-  outline-color: var(--slate-200);
-}
-
-.btn-answer:hover {
-  background-color: var(--slate-100);
-}

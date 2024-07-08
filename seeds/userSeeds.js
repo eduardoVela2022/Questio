@@ -1,8 +1,9 @@
 // Imports
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 // User seeds
-const userSampleData = [
+let userSampleData = [
   {
     username: "John Smith",
     email: "john_smith@email.com",
@@ -22,7 +23,9 @@ const userSampleData = [
 
 // Adds the user seeds to the user table of the database
 async function seedUser() {
-  await User.bulkCreate(userSampleData);
+  await User.create(userSampleData[0]);
+  await User.create(userSampleData[1]);
+  await User.create(userSampleData[2]);
 }
 
 // Exports

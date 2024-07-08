@@ -1,6 +1,7 @@
 /* Homepage H2 Class */
 .homepage-h2 {
   justify-content: center;
+  text-align: center;
   font-size: 1.75rem;
   font-weight: 400;
   margin-bottom: 4rem;

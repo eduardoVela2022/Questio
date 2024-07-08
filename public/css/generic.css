@@ -43,6 +43,21 @@
   background-color: var(--orange-500);
 }
 
+/* Answer Button Class */
+.btn-gray {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: var(--slate-200);
+  transition: background-color 0.5s ease;
+  outline-offset: 3px;
+  outline-color: var(--slate-200);
+}
+
+.btn-gray:hover {
+  background-color: var(--slate-100);
+}
+
 /* Website Header Class */
 .website-header {
   justify-content: space-between;

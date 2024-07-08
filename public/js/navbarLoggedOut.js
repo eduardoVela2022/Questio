@@ -4,12 +4,12 @@ const navbarSignupBtn = document.querySelector("#navbar-signup-btn");
 
 // Redirects the user to the log in view
 function goToLoginView() {
-  document.location.replace("/login");
+  document.location.assign("/login");
 }
 
 // Redirects the user to the sign up view
 function goToSignupView() {
-  document.location.replace("/signup");
+  document.location.assign("/signup");
 }
 
 // Navbar button event listeners
