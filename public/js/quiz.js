@@ -7,15 +7,15 @@ const quizSubmitBtn = document.querySelector("#quiz-submit-btn");
 // Handles what happens when a user clicks an answer button
 function handleAnswerClick(questionId, answerId) {
   // Gets the previously selected answer
-  const previousSelectedAnswer = questionAnswersButtons.filter(
+  const previousSelectedAnswer = [...questionAnswersButtons].filter(
     (button) =>
       button.dataset.questionId === questionId &&
       button.classList.contains("selected-answer")
-  );
+  )[0];
   // Gets the answer button that was selected
-  const selectedAnswer = questionAnswersButtons.filter(
+  const selectedAnswer = [...questionAnswersButtons].filter(
     (button) => button.dataset.answerId === answerId
-  );
+  )[0];
 
   if (!previousSelectedAnswer) {
     // Marks that button as the selected answer
@@ -43,7 +43,7 @@ function handleAnswerClick(questionId, answerId) {
 // Submits the quiz
 function submitQuiz() {
   // Gets the answers that were selected by the user
-  const userSelectedAnswers = questionAnswersButtons.filter((button) =>
+  const userSelectedAnswers = [...questionAnswersButtons].filter((button) =>
     button.classList.contains("selected-answer")
   );
 
