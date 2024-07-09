@@ -4,7 +4,12 @@ const navbarSignupBtn = document.querySelector("#navbar-signup-btn");
 
 // Redirects the user to the log in view
 function goToLoginView() {
-  document.location.assign("/login");
+  try {
+    document.location.assign("/login");
+  } catch (error) {
+    console.error("Error redirecting to login:", error);
+    // Handle the error, e.g., display a message to the user
+  }
 }
 
 // Redirects the user to the sign up view

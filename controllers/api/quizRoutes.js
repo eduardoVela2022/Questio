@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 
     res.status(200).json(quizzes);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: err.message });
   }
 });
 
@@ -228,6 +228,36 @@ router.put("/:id", withAuth, async (req, res) => {
     await transaction.rollback();
     console.error("Error updating quiz:", err);
     res.status(500).json({ message: err.message });
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const quizId = req.params.id;
+    // Fetch quizzes with their questions and answers
+    const quiz = await Quiz.findOne({
+      where: { id: quizId },
+      include: [
+        {
+          model: Question,
+          as: "questions",
+          include: [
+            {
+              model: Answer,
+              as: "answers",
+            },
+          ],
+        },
+        {
+          model: User,
+          as: "user",
+        },
+      ],
+    });
+
+    res.status(200).json(quiz);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
   }
 });
 

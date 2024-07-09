@@ -9,35 +9,26 @@ const formQuizCreateQuizBtn = document.querySelector(
   "#form-quiz-create-quiz-btn"
 );
 
-// const questionObject = {
-//   question: "",
-//   answers: [
-//     {
-//       answer: "",
-//       isCorrect: false,
-//     },
-//   ],
-// };
-
 // Creates the question objects
 function formatQuestions(questions, answers) {
-  // List were the question objects will be stored
+  // List where the question objects will be stored
   const questionList = [];
 
   // Question objects are created
-  for (let counter = 0; counter < 10; counter++) {
+  for (let counter = 0; counter < questions.length; counter++) {
     questionList.push({
       question: questions[counter],
       answers: formatAnswers(answers, counter),
     });
   }
 
-  console.log(questionList);
+  // Returns question list
+  return questionList;
 }
 
 // Creates the answer objects
 function formatAnswers(answers, questionNumber) {
-  // List were the answer objects will be stored
+  // List where the answer objects will be stored
   const answerList = [];
 
   // Answer objects are created
@@ -50,6 +41,20 @@ function formatAnswers(answers, questionNumber) {
       answer: answers[counter],
       isCorrect: false,
     });
+  }
+
+  // Find the correct answer button for the current question
+  const correctAnswerButton = document.querySelector(
+    `.correct-answer-button[data-question-number="${
+      questionNumber + 1
+    }"].btn-primary`
+  );
+
+  if (correctAnswerButton) {
+    // Set the correct answer
+    const correctAnswerIndex =
+      parseInt(correctAnswerButton.textContent.substring(1)) - 1;
+    answerList[correctAnswerIndex].isCorrect = true;
   }
 
   // Returns answer list

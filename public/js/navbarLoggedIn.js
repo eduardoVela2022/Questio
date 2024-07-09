@@ -5,7 +5,12 @@ const navbarLogoutBtn = document.querySelector("#navbar-logout-btn");
 
 // Redirects the user to the account view
 function goToAccountView() {
-  document.location.assign("/account");
+  try {
+    document.location.assign("/account");
+  } catch (error) {
+    console.error("Error redirecting to login:", error);
+    // Handle the error, e.g., display a message to the user
+  }
 }
 
 // Redirects the user to the quizzes view

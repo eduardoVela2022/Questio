@@ -3,6 +3,16 @@ const bcrypt = require("bcrypt");
 const { User, Quiz } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.findAll();
+
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 // Create a new user
 router.post("/", async (req, res) => {
   try {
@@ -15,7 +25,7 @@ router.post("/", async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: err.message });
   }
 });
 
@@ -25,19 +35,17 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res
+      return res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
-      return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
+      return res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
-      return;
     }
 
     req.session.save(() => {
@@ -47,7 +55,12 @@ router.post("/login", async (req, res) => {
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.error("Login error:", err); // Log the error for debugging
+    res
+      .status(500)
+      .json({
+        message: "An error occurred while logging in. Please try again later.",
+      });
   }
 });
 
