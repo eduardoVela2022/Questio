@@ -6,29 +6,30 @@ This is a web application for managing quizzes, where users can create, modify, 
 
 - **User Management:**
 
-    Register a new user account.
+  Register a new user account.
 
-    Log in and log out securely.
-    
+  Log in and log out securely.
+
 - **Quiz Management:**
 
-    Create a new quiz with questions and answers.
-    
-    Edit existing quizzes.
-    
-    Delete quizzes.
-    
+  Create a new quiz with questions and answers.
+
+  Edit existing quizzes.
+
+  Delete quizzes.
+
 - **Quiz Playing:**
 
-    Take quizzes created by others.
-    
-    View quiz scores and results.
+  Take quizzes created by others.
+
+  View quiz scores and results.
 
 ## Installation
-There is no installation needed. To access the website [here]()
-    
+
+There is no installation needed. To access the website [here](https://questio-rejp.onrender.com/)
+
 ## Technologies Used
-    
+
 ### Backend:
 
 Node.js
@@ -42,6 +43,7 @@ Sequelize ORM for PostgreSQL
 HTML, CSS, JavaScript
 
 ## Usage
+
 1. **Register/Login:**
 
 - Create a new user account or log in with existing credentials.
@@ -67,6 +69,7 @@ HTML, CSS, JavaScript
 - Log out securely to end the session.
 
 ## Acknowledgements
+
 This project was created as part of a learning exercise and may contain simplistic implementations.
 
 # API Docs
